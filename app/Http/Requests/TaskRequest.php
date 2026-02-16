@@ -27,4 +27,26 @@ class TaskRequest extends FormRequest
             'is_completed' => 'boolean',
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'title.required' => 'Название задачи обязательно.',
+            'title.string' => 'Название должно быть строкой.',
+            'title.max' => 'Название не должно превышать 255 символов.',
+
+            'description.string' => 'Описание должно быть строкой.',
+
+            'is_completed.boolean' => 'Поле завершённости должно быть true или false.',
+        ];
+    }
+
+    public function attributes(): array
+    {
+        return [
+            'title' => 'название задачи',
+            'description' => 'описание',
+            'is_completed' => 'статус выполнения',
+        ];
+    }
 }
